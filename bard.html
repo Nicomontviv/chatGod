@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hablar con Dios</title>
+  <link rel="stylesheet" href="bard-style.css">
+</head>
+<body>
+    <h1 class="titulo-principal"> Hablar con Dios</h1>
+    <h5 class="aclaraciones">Este es un proyecto de IA en el cual puedes hacer cualquier pregunta relacionada al amor, dinero o salud y se te contestará con una frase la biblia. <br>
+    <br>Solo puedes hacer una pregunta por día <br></h5>
+  <div class="chat-container">
+    <div class="chat-box">
+      <div class="chat-messages" id="chatMessages">
+        <!-- Aquí aparecerán los mensajes -->
+      </div>
+    </div>
+    <div class="user-input">
+      <input type="text" id="userQuestion" placeholder="Haz una pregunta...">
+      <button onclick="sendMessage()" id="sendButton">Enviar</button>
+    </div>
+  </div>
+
+  <script src="bard-script.js"></script>
+</body>
+</html>
