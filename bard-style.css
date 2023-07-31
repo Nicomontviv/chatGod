@@ -1,19 +1,47 @@
-body {
+
+  body {
+    background-color: #f0f0f0; /* Color de fondo gris */
+    background-image: linear-gradient(90deg, #ffffff, #b3e0ff, #ffffff); /* Gradiente de luces celeste y blanco */
+    background-size: 200% 200%; /* Tamaño del gradiente, ajusta según desees */
+    animation: moving-lights 10s linear infinite; /* Duración, tipo de animación e infinito */  
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
   }
-  .titulo-principal , .aclaraciones{
-    color: black;
+  
+  @keyframes moving-lights {
+    0% {
+      background-position: 0 50%; /* Inicio de la animación, posición inicial */
+    }
+    50% {
+      background-position: 100% 50%; /* Mitad de la animación, posición final hacia la derecha */
+    }
+    100% {
+      background-position: 0 50%; /* Final de la animación, posición inicial nuevamente */
+    }
+  }
+  .titulo-principal{
+    color: rgb(100, 90, 90);
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .aclaraciones{
+    color: rgb(100, 90, 90);
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-left: 20px;
   }
+
   .chat-container {
     max-width: 500px;
-    margin: 20px auto;
+    margin: 50px auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
@@ -61,7 +89,7 @@ body {
   }
   
   .message.user {
-    background-color: #007bff;
+    background-color: #78b8fc;
     color: #fff;
     align-self: flex-start;
   }
@@ -89,4 +117,30 @@ body {
     25% {
       opacity: 1;
     }
+  }
+
+  .faq {
+    
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question {
+    cursor: pointer;
+    color: #000;
+    background-color: #b3e0ff;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  .answer {
+    display: none;
+    padding: 10px;
+    color: #333;
+    background-color: #f0f0f0;
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
