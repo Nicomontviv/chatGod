@@ -40,7 +40,7 @@
   }
 
   .chat-container {
-    max-width: 500px;
+    max-width: 700px;
     margin: 50px auto;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -118,6 +118,46 @@
       opacity: 1;
     }
   }
+
+  .slider {
+    position: relative;
+    margin: 50px;
+    margin-left: 30%;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.slide-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buttong {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.buttong:focus {
+    outline: none;
+}
+  
+
 
   .faq {
     
