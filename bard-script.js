@@ -197,7 +197,7 @@ function sendMessage() {
     if (userQuestion !== "") {
       sendButton.disabled = true; // Deshabilitar el botón mientras se procesa la pregunta
   
-      const waitTime = 3600000; // 5 segundos en milisegundos
+      const waitTime = 4000; // 5 segundos en milisegundos
       const lastQuestionTime = localStorage.getItem("lastQuestionTime");
   
       if (!lastQuestionTime || (Date.now() - lastQuestionTime) >= waitTime) {
