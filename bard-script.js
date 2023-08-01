@@ -1,17 +1,22 @@
-function containsWord(texto1, texto2) {
-    // Convertimos los textos a minúsculas para hacer la comparación insensible a mayúsculas
-    const words1 = texto1.toLowerCase().split(" ");
-    const words2 = texto2.toLowerCase();
+function stringToArray(inputString) {
+    // Dividir el string en palabras y convertirlas a minúsculas
+    const words = inputString.toLowerCase().split(/\s+/);
   
-    // Verificamos si alguna palabra de texto1 se encuentra en texto2
-    for (const word of words1) {
-      if (words2.includes(word)) {
+    return words;
+  }
+
+function containsWord(texto1, texto2) {
+  for (let word2 of texto2) {
+    const lowerWord2 = word2.toLowerCase();
+    for (let word1 of texto1) {
+      if (word1.toLowerCase().includes(lowerWord2)) {
+        console.log(lowerWord2);
         return true;
       }
     }
-  
-    return false;
   }
+  return false;
+}
 
 // Función para obtener una respuesta aleatoria de la Biblia
 function getBibleRandomVerse(texto) {
@@ -160,17 +165,23 @@ function getBibleRandomVerse(texto) {
 
      
 
-        textoInput = texto;
+        textoInput = stringToArray(texto);
 
         let grupoDeFrases;
 
-        let frasesAmor = "amor corazón pareja enamorado beso abrazo pasión cariño romance afecto ternura compromiso sueño deseo ilusión devoción matrimonio felicidad caricia unión admiración atracción alma cariñoso compañero ternura flechazo suspiro encanto pasión sincero sentimiento dulzura risas complicidad fidelidad conquista amor esposo esposa hombre marido mujer novio novia chica chicas chico chicos beso besos sexo quiere ama amar enamorarse enamorado enamorada"
-        
-        let frasesDinero = "dinero ingreso salario ganancia inversión ahorro riqueza fortuna presupuesto deudas crédito finanzas beneficio bonanza prosperidad capital dividendos herencia heredar éxito bolsa mercados emprendimiento negocio emprendedor ganar invertir gastar austeridad riqueza acumular pagar sueldo salario negocio dinero plata economia ganancia emprender negocios emprendedores billetera trabajo asenso ascenso elecciones politica crypto cryptomoneda bitcoin  ";
-
-        let frasesSalud = "salud bienestar enfermedad medicina prevención tratamiento nutrición ejercicio físico actividad física higiene sueño descanso bienestar mental emocional equilibrio saludable prevención diagnóstico terapia medicamentos médico hospital recuperación bienestar emocional prevención cuidado enfermedades vacunación rehabilitación bienestar social actividad física bienestar emocional salud enfermedad dolor doler duele hinchado medico hospital remedio cancer tos morir muerto fallecer matar mal siento sangre "; 
-        
-        let frasesIlegales = "armas pistola mierda idiota imbecil estupido concha puto puta tarado droga merca falopa marihuana golpe piñas piña romper";
+        let frasesAmor = [
+            "amor","corazón","pareja","enamorado","beso","abrazo","pasión","pasion","cariño","romance","afecto","ternura","compromiso","sueño","deseo","ilusión","ilusion","devoción","devocion","matrimonio","felicidad","caricia","unión","union","admiración","atracción","alma","cariñoso","cariño","compañero","ternura","flechazo","suspiro","encanto","pasión","sincero","sentimiento","dulzura","risas","complicidad","fidelidad","conquista","amor","esposo","esposa","hombre","marido","mujer","novio","novia","chica","chicas","chico","chicos","beso","besos","sexo","quiere","ama","amar","enamorarse","enamorado","enamorada"
+          ];
+          
+        let frasesDinero = [
+            "dinero","ingreso","salario","ganancia","inversión","ahorro","riqueza","fortuna","presupuesto","deudas","crédito","finanzas","beneficio","bonanza","prosperidad","capital","dividendos","herencia","heredar","éxito","bolsa","mercados","emprendimiento","negocio","emprendedor","ganar","invertir","gastar","austeridad","riqueza","acumular","pagar","sueldo","salario","negocio","dinero","plata","economia","ganancia","emprender","negocios","emprendedores","billetera","trabajo","asenso","ascenso","elecciones","politica","crypto","cryptomoneda","bitcoin"
+          ];
+          
+        let frasesSalud = [
+            "salud","bienestar","enfermedad","medicina","prevención","tratamiento","nutrición","ejercicio","físico","actividad","física","higiene","sueño","descanso","bienestar","mental","emocional","equilibrio","saludable","prevención","diagnóstico","terapia","medicamentos","médico","hospital","recuperación","bienestar","emocional","prevención","cuidado","enfermedades","vacunación","rehabilitación","bienestar","social","actividad","física","bienestar","emocional","salud","enfermedad","dolor","doler","duele","hinchado","medico","hospital","remedio","cancer","tos","morir","muerto","fallecer","matar","mal","siento","sangre"
+          ];
+          
+        let frasesIlegales = ["armas", "pistola", "mierda", "idiota", "imbecil", "estupido", "concha","puto", "puta", "tarado", "droga", "merca", "falopa", "marihuana" ,"golpe", "piñas" ,"piña", "romper"];
         if (containsWord(textoInput, frasesAmor)){
              grupoDeFrases = bibleVersesAmor;
         }else if(containsWord(textoInput, frasesDinero)){
